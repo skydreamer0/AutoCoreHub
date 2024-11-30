@@ -9,9 +9,11 @@ import ContactPage from './pages/ContactPage'
 import CheckoutPage from './pages/CheckoutPage'
 
 function App() {
+  const basename = import.meta.env.PROD ? '/AutoCoreHub' : ''
+  
   return (
     <CartProvider>
-      <Router>
+      <Router basename={basename}>
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route index element={<HomePage />} />
