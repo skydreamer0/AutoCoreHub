@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import { CartProvider } from './context/CartContext'
 import Layout from './components/layout/Layout'
 import HomePage from './pages/HomePage'
@@ -11,7 +11,7 @@ import CheckoutPage from './pages/CheckoutPage'
 function App() {
   return (
     <CartProvider>
-      <BrowserRouter>
+      <Router>
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route index element={<HomePage />} />
@@ -22,7 +22,7 @@ function App() {
             <Route path="checkout" element={<CheckoutPage />} />
           </Route>
         </Routes>
-      </BrowserRouter>
+      </Router>
     </CartProvider>
   )
 }
